@@ -1,6 +1,7 @@
 # OmniAuth Pushbullet
 
 [![Gem Version](https://badge.fury.io/rb/omniauth-pushbullet.svg)](https://badge.fury.io/rb/omniauth-pushbullet)
+[![Build Status](https://travis-ci.org/nevern02/omniauth-pushbullet.svg?branch=master)](https://travis-ci.org/nevern02/omniauth-pushbullet)
 
 This gem contains an OmniAuth strategy for [Pushbullet](https://www.pushbullet.com/) using their OAuth2 authentication API.
 
