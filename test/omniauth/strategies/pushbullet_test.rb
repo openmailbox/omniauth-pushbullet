@@ -22,7 +22,7 @@ class PushbulletTest < Minitest::Test
   def test_correct_client_options
     options = @strategy.options.client_options
 
-    assert_equal 'https://www.pushbullet.com',              options.site
+    assert_equal 'https://api.pushbullet.com',              options.site
     assert_equal 'https://www.pushbullet.com/authorize',    options.authorize_url
     assert_equal 'https://api.pushbullet.com/oauth2/token', options.token_url
   end

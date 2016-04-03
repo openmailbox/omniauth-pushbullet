@@ -5,15 +5,14 @@ require 'json'
 module OmniAuth
   module Strategies
     class Pushbullet < OmniAuth::Strategies::OAuth2
-      BASE_URL = 'https://www.pushbullet.com'
-      API_URL  = 'https://api.pushbullet.com'
+      BASE_URL = 'https://api.pushbullet.com'
 
       option :name, 'pushbullet'
 
       option :client_options, {
-        :site           => BASE_URL,
-        :authorize_url  => "#{BASE_URL}/authorize",
-        :token_url      => "#{API_URL}/oauth2/token"
+        :site          => BASE_URL,
+        :authorize_url => "https://www.pushbullet.com/authorize",
+        :token_url     => "#{BASE_URL}/oauth2/token"
       }
 
       uid do
@@ -37,7 +36,7 @@ module OmniAuth
       def raw_data
         return @data if @data
 
-        uri     = URI.parse("#{API_URL}/v2/users/me")
+        uri     = URI.parse("#{BASE_URL}/v2/users/me")
         http    = Net::HTTP.new(uri.host, uri.port)
         request = Net::HTTP::Get.new(uri.request_uri)
 
