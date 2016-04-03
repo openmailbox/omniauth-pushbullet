@@ -46,7 +46,7 @@ The remaining integration steps are explained in the [README for OmniAuth](https
 
 After checking out the repo, run `bin/setup` or `bundle install` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`.
+To install the gem with your local changes onto your machine, run `bundle exec rake install`.
 
 ## Contributing
 
