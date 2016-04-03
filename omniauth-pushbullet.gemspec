@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Omniauth::Pushbullet::VERSION
   spec.authors       = ["Brandon Rice"]
   spec.email         = ["brandon@blrice.net"]
+  spec.license       = 'MIT'
 
   spec.summary       = %q{Pushbullet OAuth2 strategy for OmniAuth}
   spec.description   = %q{Pushbullet OAuth2 strategy for OmniAuth}
