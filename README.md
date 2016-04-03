@@ -1,8 +1,8 @@
-# Omniauth::Pushbullet
+# OmniAuth Pushbullet
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/pushbullet`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem contains an OmniAuth strategy for [Pushbullet](https://www.pushbullet.com/) using their OAuth2 authentication API.
 
-TODO: Delete this and the text above, and describe your gem
+Before using this gem, you will need to register an application with Pushbullet through their website.
 
 ## Installation
 
@@ -22,15 +22,37 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Integrate the strategy as middleware in any Rack app by editing `config.ru`:
+
+```ruby
+use OmniAuth::Builder do
+  provider :pushbullet, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
+end
+```
+
+If you're using Rails, there's a slightly different variation. Add the following to a file of your choice in config/initializers:
+
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :pushbullet, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
+end
+```
+
+The `CLIENT_ID` and `CLIENT_SECRET` are obtained from Pushbullet after registering your application.
+
+The remaining integration steps are explained in the [README for OmniAuth](https://github.com/intridea/omniauth#integrating-omniauth-into-your-application)
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` or `bundle install` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/omniauth-pushbullet.
+1. Fork it ( http://github.com/nevern02/omniauth-pushbullet/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
