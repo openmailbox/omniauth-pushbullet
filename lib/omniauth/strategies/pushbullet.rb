@@ -17,14 +17,14 @@ module OmniAuth
       }
 
       uid do
-        raw_data.delete('iden')
+        raw_data['iden']
       end
 
       info do
         {
-          :name  => raw_data.delete('name'),
-          :email => raw_data.delete('email'),
-          :image => raw_data.delete('image_url')
+          :name  => raw_data['name'],
+          :email => raw_data['email'],
+          :image => raw_data['image_url']
         }
       end
 
